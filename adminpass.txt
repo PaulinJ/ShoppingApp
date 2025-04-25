@@ -1,0 +1,3 @@
+admin
+Django ShopApp
+P1aul@CingJ@n1

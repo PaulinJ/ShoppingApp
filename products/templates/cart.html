@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Your Cart</h1>
+
+{% if cart_items %}
+  <ul class="list-group">
+    {% for item in cart_items %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ item.product.name }} (x{{ item.quantity }})
+        <span>R{{ item.product.price|floatformat:2 }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>Your cart is empty.</p>
+{% endif %}
+
+<a href="/products/" class="btn btn-secondary mt-3">Continue Shopping</a>
+{% endblock %}

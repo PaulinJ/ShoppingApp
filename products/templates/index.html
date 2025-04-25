@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Products</h1>
+<div class="row">
+  {% for product in products %}
+  <div class="col-md-6 mb-3">
+    <div class="card flex-row">
+      <img src="{{ product.image_url }}" class="img-fluid" style="width: 150px; object-fit: cover;" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">R{{ product.price }}</p>
+        <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
